@@ -1,2 +1,5 @@
+include ':coreAndroid'
+include ':auth:login'
+include ':auth'
 include ':app'
 rootProject.name = "AppAndroid"
