@@ -1,3 +1,4 @@
+include ':auth:register'
 include ':coreAndroid'
 include ':auth:login'
 include ':auth'
