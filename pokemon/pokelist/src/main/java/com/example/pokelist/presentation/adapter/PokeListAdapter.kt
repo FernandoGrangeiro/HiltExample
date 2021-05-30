@@ -3,11 +3,11 @@ package com.example.pokelist.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pokelist.data.response.PokeListResponse
+import com.example.pokelist.data.response.PokeListItemResponse
 import com.example.pokelist.databinding.PokemonItemBinding
 
-class PokemonListAdapter(val items: List<PokeListResponse>) :
-    RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
+class PokeListAdapter(var items: List<PokeListItemResponse>) :
+    RecyclerView.Adapter<PokeListAdapter.PokemonListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokemonListViewHolder {
         val binding = PokemonItemBinding
@@ -15,19 +15,20 @@ class PokemonListAdapter(val items: List<PokeListResponse>) :
         return PokemonListViewHolder(binding)
     }
 
+    fun setData(items: List<PokeListItemResponse>) {
+        this.items = items
+        notifyDataSetChanged()
+    }
+
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: PokemonListViewHolder, position: Int) {
         with(holder) {
-//            Glid.with(itemView.context)
-//                .load(badgeUrl)
-//                .into(binding.topLearnerImage)
-
-            itemView.setOnClickListener {}
+            binding.pokemonName.text = items[position].name
+            binding.base.setOnClickListener {}
         }
     }
 
     inner class PokemonListViewHolder(val binding: PokemonItemBinding) :
         RecyclerView.ViewHolder(binding.root)
-
 }

@@ -8,6 +8,8 @@ import com.example.pokelist.domain.repository.PokeListRepository
 import com.example.pokelist.domain.repository.PokeListRepositoryContract
 import com.example.pokelist.domain.usecase.PokeListUseCase
 import com.example.pokelist.domain.usecase.PokeListUseCaseContract
+import com.example.pokelist.presentation.adapter.PokeListAdapter
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,4 +39,8 @@ class PokeListModule {
     @Singleton
     fun providePokeListUseCaseContract(pokeListUseCase: PokeListUseCase): PokeListUseCaseContract =
         pokeListUseCase
+
+    @Provides
+    @Singleton
+    fun providePokeListAdapter(): PokeListAdapter = PokeListAdapter(listOf())
 }

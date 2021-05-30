@@ -1,3 +1,4 @@
+include ':coreAndroid'
 include ':networkModule'
 include ':auth:login'
 include ':pokemon'
