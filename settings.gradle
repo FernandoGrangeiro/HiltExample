@@ -1,5 +1,8 @@
 include ':coreAndroid'
+include ':networkModule'
 include ':auth:login'
+include ':pokemon'
 include ':auth'
 include ':app'
+include ':pokemon:pokelist'
 rootProject.name = "AppAndroid"

@@ -61,7 +61,8 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:1.0.0-beta01"
 
     implementation project(path: ':auth:login')
-    implementation project(path: ':coreAndroid')
+    implementation project(path: ':networkModule')
+    implementation project(path: ':pokemon:pokelist')
 
 
     testImplementation 'junit:junit:4.+'
