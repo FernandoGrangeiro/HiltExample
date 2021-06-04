@@ -41,7 +41,7 @@ object PokeApiNetwork {
     @Singleton
     @Provides
     fun provideRetrofit(
-        okHttpClient: OkHttpClient,
+        @Teste okHttpClient: OkHttpClient,
         @Teste BASE_URL: String
     ): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())

@@ -19,8 +19,8 @@ class PokeListViewModel @Inject constructor(
 
     fun getPokeList() = viewModelScope.launch {
         pokeListUseCaseContract.getPokeList().let {
-            it.body()?.let {
-                _pokelist.value = it
+            it.body()?.let { pokeList ->
+                _pokelist.value = pokeList
             }
         }
     }
