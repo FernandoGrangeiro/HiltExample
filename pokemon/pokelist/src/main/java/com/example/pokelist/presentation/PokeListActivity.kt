@@ -13,7 +13,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class PokeListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPokeListBinding
-    private val pokeListViewModel by viewModels<PokeListViewModel>()
+    private val pokeListViewModel: PokeListViewModel by viewModels()
 
     @Inject
     lateinit var pokeListAdapter: PokeListAdapter
